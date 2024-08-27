@@ -22,7 +22,8 @@
     ]
   },
   "gitHooks": {
-    "commit-msg": "node scripts/commitlint.js verify-commit"
+    "commit-msg": "node scripts/commit-lint.js verify-commit",
+    "pre-commit": "npx --no-install lint-staged"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.4.0",
