@@ -1,0 +1,13 @@
+$primary-color: #64ff00;
+
+//定义局部样式
+.title {
+  color: $test-color;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+//在CSS Module中导出scss变量
+:export {
+  primaryColor: $primary-color;
+}
