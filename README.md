@@ -18,6 +18,7 @@ yarn config set registry https://registry.npmmirror.com
 npx create-next-app@latest
 ```
 根据提示，创建项目
+
 ![](https://cdn.nlark.com/yuque/0/2024/webp/21485300/1724826149928-28cbf7cb-2e2d-4e6e-b4f3-4217b2703988.webp#averageHue=%230e315e&clientId=ud9e9f12d-cb75-4&from=paste&id=u2f34129d&originHeight=119&originWidth=609&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u39e10f79-d015-481d-9790-846f44a70d5&title=)
 
 1. 输入项目的名称
@@ -37,6 +38,7 @@ yarn add @typescript-eslint/eslint-plugin@^6.21.0 -D
 脚手架自带的@typescript-eslint/typescript-estree6.21.0版本不支持typescript高于5.4.0的版本，而项目中的package.json中"typescript": "^5"，即安装typescript5的最新版本，目前typescript最新版本为5.4.2，会不兼容，因此需指定typescript的版本
 ## 2. 指定Typescript版本
 如果已经安装了，先执行`npm uninstall typescript`进行卸载，然后运行`npm i typescript@^5.2.2 -D`进行安装
+
 ## 3. 安装 prettier
 ```bash
 //允许 ESLint 报告不符合 Prettier 格式化规则的代码
@@ -103,7 +105,9 @@ npm i prettier@^3.2.5 -D
 },
 ```
 重启VSCode，打开src/app/layout.tsx，可以看到报错信息
+
 ![](https://cdn.nlark.com/yuque/0/2024/webp/21485300/1724826270807-0e5c5eeb-b2a8-4d79-bf1b-d0819877ee9e.webp#averageHue=%231f231f&clientId=ud9e9f12d-cb75-4&from=paste&id=u834f343e&originHeight=75&originWidth=340&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u7b1e7ae4-cff6-486f-b069-b3ad5f875a4&title=)
+
 这是因为在 .prettierrc 中配置了`"singleQuote": true`即单引号，而文件中使用的是双引号，所以编辑器提示报错
 运行 `npm run lint`，可自动修复上述 eslint(prettier/prettier) 问题
 # 4. 配置 VSCode
@@ -118,9 +122,13 @@ npm i prettier@^3.2.5 -D
 ```
 新版的vscode配置为explicit，老版的为true
 在插件中选择扩展设置
+
 ![](https://cdn.nlark.com/yuque/0/2024/webp/21485300/1724826301126-66f6cd95-4123-4bde-88c8-d3a955d0f94c.webp#averageHue=%234f4634&clientId=ud9e9f12d-cb75-4&from=paste&id=u531e3fa0&originHeight=374&originWidth=707&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u37a67dc6-6828-4a8f-9485-fcf71b84d8a&title=)
+
 将每行代码的长度限制由80改为120（因为 .prettierrc中"printWidth": 120,）
+
 ![](https://cdn.nlark.com/yuque/0/2024/webp/21485300/1724826308888-6cd814d2-3226-4ac4-b30e-22a4c842aaed.webp#averageHue=%23242424&clientId=ud9e9f12d-cb75-4&from=paste&id=ua7da8597&originHeight=206&originWidth=624&originalType=url&ratio=1&rotation=0&showTitle=false&status=done&style=none&taskId=u3f992497-19a4-4d41-ad6b-40eb619db3e&title=)
+
 保存之后，重启VScode
 # 5. 配置 import 导入顺序
 在开发组件时，需要引用外部资源，当import的包很多时，例如有next、react第三方包，有自定义包，有Typescript类型文件，有样式文件等等。
