@@ -14,7 +14,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https', //图片资源的协议
-        hostname: 'p3-juejin-sign.byteimg.com', //图片资源的域名
+        hostname: 'i2.hdslb.com', //图片资源的域名
       },
     ],
   },
